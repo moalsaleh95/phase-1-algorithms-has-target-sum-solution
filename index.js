@@ -1,9 +1,20 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  let numbersObject = {};
+
+  for (number of array) {
+
+    let remainder = target - number;
+
+    if (numbersObject[remainder]) return true;
+    else numbersObject[number] = true;
+  }
+  return false;
 }
 
 /* 
   Write the Big O time complexity of your function here
+  O(n)
 */
 
 /* 

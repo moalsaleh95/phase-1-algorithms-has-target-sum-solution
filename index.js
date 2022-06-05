@@ -1,13 +1,24 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
-  let numbersObject = {};
+  // let numbersObject = {};
+
+  // for (number of array) {
+
+  //   let remainder = target - number;
+
+  //   if (numbersObject[remainder]) return true;
+  //   else numbersObject[number] = true;
+  // }
+  // return false;
+
+  let numbersSet = new Set();
 
   for (number of array) {
 
-    let remainder = target - number;
+    let remainer = target - number;
 
-    if (numbersObject[remainder]) return true;
-    else numbersObject[number] = true;
+    if (numbersSet.has(remainer)) return true;
+    else numbersSet.add(number);
   }
   return false;
 }
@@ -19,10 +30,12 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+  using set()
 */
 
 /*
   Add written explanation of your solution here
+  my code from previous exercise contained 2 loops and there is no way around optimizing that !
 */
 
 // You can run `node index.js` to view these console logs
@@ -40,6 +53,11 @@ if (require.main === module) {
 
   console.log("Expecting: false");
   console.log("=>", hasTargetSum([1, 2, 5], 4));
+
+  console.log("");
+
+  console.log("Expecting: true");
+  console.log("=>", hasTargetSum([1, 4, 5, 100, 95], 96));
 }
 
 module.exports = hasTargetSum;
